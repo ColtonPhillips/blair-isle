@@ -1,6 +1,7 @@
 #white noise 1 
 import sys, pygame, noisey, random
 import blairtool
+random.seed()
 
 pygame.init()
 surface_size= surface_width, surface_height = int(sys.argv[1]),int(sys.argv[2])
@@ -22,10 +23,10 @@ def pixel(surface, color, pos):
 
 screen.fill(black)
 pygame.display.flip()
-my_surface.blit(screen, (0,0))
+#my_surface.blit(screen, (0,0))
 
 my_noise = noisey.generateWhiteNoise(surface_width, surface_height)
 for i in range(0,surface_height):
 	for j in range(0,surface_width):
-		pixel(my_surface, noisyColor(my_noise[i][j]), (i,j))
+		pixel(my_surface, noisyColor(my_noise[i][j]), (j,i))
 pygame.image.save(my_surface,blairtool.out_file_name())
