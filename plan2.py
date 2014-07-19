@@ -1,6 +1,5 @@
-#white noise 1 
-import sys, pygame, noisey, random
-import blairtool
+# NUMPY We just want to compare the two white noise functions
+import sys, pygame, noisey, random, blairtool
 
 pygame.init()
 surface_size= surface_width, surface_height = int(sys.argv[1]),int(sys.argv[2])
@@ -24,7 +23,7 @@ screen.fill(black)
 pygame.display.flip()
 my_surface.blit(screen, (0,0))
 
-my_noise = noisey.generateWhiteNoise(surface_width, surface_height)
+my_noise = noisey.generateWhiteNoiseNumpy(surface_width, surface_height)
 for i in range(0,surface_height):
 	for j in range(0,surface_width):
 		pixel(my_surface, noisyColor(my_noise[i][j]), (i,j))
