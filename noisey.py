@@ -14,9 +14,9 @@ def generateWhiteNoise(width,height):
 	return noise
 
 # range is [0.1]
-def generateWhiteNoiseNumpy(width,height):
+def generateWhiteNoiseNumpy(width,height,loc=0.5,sd=0.5):
 	import numpy
-	noise = numpy.random.normal(0.5,0.5,(height,width))
+	noise = numpy.random.normal(loc,sd,(height,width))
 	for (x,y), value in numpy.ndenumerate(noise):
 		if noise[x,y] < 0: noise[x,y] = 0
 		if noise[x,y] > 1: noise[x,y] = 1
