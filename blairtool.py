@@ -10,7 +10,10 @@ def init_pygame():
 	size = width, height = 320,320 
 	black = 0, 0, 0
 	screen = pygame.display.set_mode(size)
+	screen.convert()
+	screen.convert_alpha()
 	my_surface = pygame.Surface(surface_size)
+	my_surface.convert_alpha()
 	screen.fill(black)
 	pygame.display.flip()
 	return my_surface, surface_width, surface_height
