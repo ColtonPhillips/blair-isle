@@ -13,7 +13,7 @@ def generateWhiteNoise(width,height):
 
 	return noise
 
-# range is [0.1]
+# range is [0,1]
 def generateWhiteNoiseNumpy(width,height,loc=0.5,sd=0.5):
 	import numpy
 	noise = numpy.random.normal(loc,sd,(height,width))
