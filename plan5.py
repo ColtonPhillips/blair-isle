@@ -22,7 +22,7 @@ def get_cool_surface(noise):
 
 
 #my_noise = noisey.generatePerlinNoise(2,2)
-my_noise = noisey.generatePerlinNoise(800,800)
+my_noise = noisey.generatePerlinNoise(1000,1000)
 my_surface = get_cool_surface(my_noise)
 pygame.image.save(my_surface,blairtool.out_file_name())
 quit()

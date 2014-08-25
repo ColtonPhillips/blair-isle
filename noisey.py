@@ -1,7 +1,7 @@
 import random
 import math
 
-random.seed(0)
+random.seed()
 
 # range is [0,1] , either 0 or 1
 def generateWhiteNoise(width,height):
