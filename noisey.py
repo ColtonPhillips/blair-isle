@@ -1,7 +1,7 @@
 import random
 import math
 
-random.seed()
+#random.seed()
 
 # range is [0,1] , either 0 or 1
 def generateWhiteNoise(width,height):
@@ -23,12 +23,14 @@ def generateWhiteNoiseNumpy(width,height,loc=0.5,sd=0.5):
 
 	return noise
 
-
-def generatePerlinNoise(width,height):
+#noise3(x, y, z, octaves=1, persistence=0.5, lacunarity=2.0repeatx=1024, repeaty=1024, repeatz=1024, base=0.0)
+def generatePerlinNoise(width,height,octaves=1,persistance=0.5,lacunarity=2.0,repeatx=1024,repeaty=1024,base=0):
 	big_number = float(max(width,height) + 2)
-	from noise import pnoise2
+	from noise import pnoise3
 	my_noise = [[r for r in range(width)] for i in range(height)]
+	_r = random.random()
 	for i in range(0,height):
 		for j in range(0,width):
-			my_noise[i][j] = (1.0 + pnoise2(float(i)/big_number, float(j)/big_number, 42)) / 2.0
+			#my_noise[i][j] = (1.0 + pnoise3(float(i)/big_number, float(j)/big_number, _r, octaves,persistance,lacunarity,repeatx,repeaty,base)) / 2.0
+			my_noise[i][j] = (1.0 + pnoise3(float(i)/big_number, float(j)/big_number, _r,octaves,persistance, lacunarity,repeatx,repeaty,base)) / 2.0
 	return my_noise		

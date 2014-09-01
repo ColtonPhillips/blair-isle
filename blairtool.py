@@ -17,7 +17,7 @@ def out_file_name():
 
 def init_pygame():
 	import sys
-	random.seed()
+#	random.seed()
 	pygame.init()
 	surface_size= surface_width, surface_height = int(sys.argv[1]),int(sys.argv[2])
 	size = width, height = 320,320 
