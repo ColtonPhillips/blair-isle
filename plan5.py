@@ -1,4 +1,10 @@
 # Mumble number 5
+
+# COLTON NOTE
+#okay so i messed this up by experimenting. I'm going to leave it as it is, and focus on
+# having plan6 be closer to the mark. It's all functional, it's just not really creating
+# a map anymore it's more experiemental
+
 # Look pal. I have no idea if this is even what I want, ya know?
 # But Heck, it just plain looks like it's working!
 import sys, pygame, noisey, random, blairtool
@@ -21,11 +27,8 @@ def get_cool_surface(noise):
 	return surf
 
 
-#my_noise = noisey.generatePerlinNoise(2,2)
-my_noise = noisey.generatePerlinNoise(int(sys.argv[1]),int(sys.argv[2]))
+my_noise = noisey.generatePerlinNoise(2,2)
 my_surface = get_cool_surface(my_noise)
-pygame.image.save(my_surface,blairtool.out_file_name())
-quit()
 
 #this stuff is boring right now until i do this smarter
 my_surface = pygame.transform.scale(my_surface, (surface_width, surface_height))
