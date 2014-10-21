@@ -24,7 +24,9 @@ def generateWhiteNoiseNumpy(width,height,loc=0.5,sd=0.5):
 	return noise
 
 #noise3(x, y, z, octaves=1, persistence=0.5, lacunarity=2.0repeatx=1024, repeaty=1024, repeatz=1024, base=0.0)
-def generatePerlinNoise(width,height,octaves=1,persistance=0.5,lacunarity=2.0,repeatx=1024,repeaty=1024,base=0):
+def generatePerlinNoise(width,height,octaves=16,persistance=0.7,lacunarity=3.0,repeatx=10024,repeaty=10024,base=0):
+	base = random.randint(0,1024)
+	print (base)
 	big_number = float(max(width,height) + 2)
 	from noise import pnoise3
 	my_noise = [[r for r in range(width)] for i in range(height)]
